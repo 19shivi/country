@@ -35,11 +35,11 @@ public class CountryRepository  {
             daoAccess.insert(country);
         });
     }
- public    void delete()
+ public   void delete()
     {
 
             daoAccess.deleteAll();
 
-        
+
     }
 }
