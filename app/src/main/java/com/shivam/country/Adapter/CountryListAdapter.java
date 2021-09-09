@@ -65,15 +65,15 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
       holder.setIsRecyclable(false);
         holder.name.setText(countries.get(position).getName());
-        holder.capital.setText(countries.get(position).getCapital());
-        holder.region.setText(countries.get(position).getRegion());
-        holder.subregion.setText(countries.get(position).getSubregion());
+        holder.capital.setText("Capital : "+countries.get(position).getCapital());
+        holder.region.setText("Region  : "+countries.get(position).getRegion());
+        holder.subregion.setText("Subregion : "+countries.get(position).getSubregion());
         holder.border.setText("Borders : "+countries.get(position).getBorders().toString());
         String l="";
         for(Languages  i :countries.get(position).getLanguages())
             l+=" "+i.getName();
         holder.languages.setText("Languages : "+l);
-        holder.population.setText(Integer.toString(countries.get(position).getPopulation()));
+        holder.population.setText("Population : "+Integer.toString(countries.get(position).getPopulation()));
 
         Utils.fetchSvg(context, countries.get(position).getFlag(), holder.flag);
     }
